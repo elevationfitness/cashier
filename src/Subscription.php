@@ -28,6 +28,15 @@ class Subscription extends Model
     ];
 
     /**
+     * Update name of the "updated at" and "created at" column.
+     *
+     * @var string
+     */
+    const CREATED_AT = 'SubscriptionsCreatedAt';
+    const UPDATED_AT = 'SubscriptionsUpdatedAt';
+
+
+    /**
      * Indicates if the plan change should be prorated.
      *
      * @var bool
