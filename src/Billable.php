@@ -221,7 +221,8 @@ trait Billable
     public function subscriptions()
     {
         //change field name created_at -> SubscriptionsCreatedAt
-        return $this->hasMany(Subscription::class, $this->getForeignKey())->orderBy('SubscriptionsCreatedAt', 'desc');
+        return $this->hasMany(Subscription::class, 'SubscriptionsUsersId')->orderBy('SubscriptionsCreatedAt', 'desc');
+        //return $this->hasMany(Subscription::class, $this->getForeignKey())->orderBy('SubscriptionsCreatedAt', 'desc');
     }
 
     /**
