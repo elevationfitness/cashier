@@ -209,7 +209,8 @@ trait Billable
             return $value->SubscriptionsCreatedAt->getTimestamp();
         })
         ->first(function ($value) use ($subscription) {
-            return $value->name === $subscription;
+            //change field name name -> SubscriptionsName
+            return $value->SubscriptionsName === $subscription;
         });
     }
 
@@ -221,7 +222,7 @@ trait Billable
     public function subscriptions()
     {
         //change field name created_at -> SubscriptionsCreatedAt
-        return $this->hasMany(Subscription::class, 'SubscriptionsUsersId')->orderBy('SubscriptionsCreatedAt', 'desc');
+        return $this->hasMany(Subscription::class, 'SubscriptionsUserId')->orderBy('SubscriptionsCreatedAt', 'desc');
         //return $this->hasMany(Subscription::class, $this->getForeignKey())->orderBy('SubscriptionsCreatedAt', 'desc');
     }
 
