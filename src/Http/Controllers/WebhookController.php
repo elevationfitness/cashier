@@ -45,7 +45,7 @@ class WebhookController extends Controller
 
         if ($user) {
             $user->subscriptions->filter(function ($subscription) use ($payload) {
-                return $subscription->stripe_id === $payload['data']['object']['id'];
+                return $subscription->SubscriptionsStripeId === $payload['data']['object']['id'];
             })->each(function ($subscription) {
                 $subscription->markAsCancelled();
             });
@@ -64,7 +64,7 @@ class WebhookController extends Controller
     {
         $model = getenv('STRIPE_MODEL') ?: config('services.stripe.model');
 
-        return (new $model)->where('stripe_id', $stripeId)->first();
+        return (new $model)->where('UsersStripeId', $stripeId)->first();
     }
 
     /**
