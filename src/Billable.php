@@ -169,8 +169,8 @@ trait Billable
      */
     public function onGenericTrial()
     {
-        //change field name trial_ends_at -> SubscriptionsTrialEndsAt
-        return $this->SubscriptionsTrialEndsAt && Carbon::now()->lt($this->SubscriptionsTrialEndsAt);
+        //change field name trial_ends_at -> UsersTrialEndsAt
+        return $this->UsersTrialEndsAt && Carbon::now()->lt($this->UsersTrialEndsAt);
     }
 
     /**
