@@ -15,7 +15,7 @@ class Subscription extends Model
      * @var array
      */
     protected $guarded = [];
-
+    protected $primaryKey = 'SubscriptionsId';
     /**
      * The attributes that should be mutated to dates.
      *
