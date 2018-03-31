@@ -314,6 +314,18 @@ trait Billable
     }
 
     /**
+     * Get invoice HTML.
+     *
+     * @param  string  $id
+     * @param  array  $data
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getInvoiceHTML($id, array $data, $storagePath = null)
+    {
+        return $this->findInvoiceOrFail($id)->view($data, $storagePath)->render();
+    }
+
+    /**
      * Get a collection of the entity's invoices.
      *
      * @param  bool  $includePending
