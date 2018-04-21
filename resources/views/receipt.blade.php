@@ -10,7 +10,7 @@
         body {
             background: #fff;
             background-image: none;
-            font-size: 12px;
+            font-size: 16px;
         }
         address{
             margin-top:15px;
@@ -72,14 +72,14 @@
             <!-- Organization Name / Date -->
             <td>
                 <br><br>
-                <strong>To:</strong> {{ $owner->email ?: $owner->name }}
+                <strong>To:</strong> {{ $owner->UsersEmail ?: $owner->UsersName }}
                 <br>
                 <strong>Date:</strong> {{ $invoice->date()->toFormattedDateString() }}
             </td>
         </tr>
         <tr valign="top">
             <!-- Organization Details -->
-            <td style="font-size:9px;">
+            <td style="font-size:14px;">
                 {{ $vendor }}<br>
                 @if (isset($street))
                     {{ $street }}<br>
